@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@nestjs/core");
+const swagger_1 = require("@nestjs/swagger");
 const app_module_1 = require("./app.module");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
@@ -8,6 +9,14 @@ async function bootstrap() {
     app.enableCors({
         origin: 'http://localhost:3000',
     });
+    const config = new swagger_1.DocumentBuilder()
+        .setTitle('Admin Microservice')
+        .setDescription('The products API description for Admin Microservice for Software Archtechture Project')
+        .setVersion('1.0')
+        .addTag('products')
+        .build();
+    const document = swagger_1.SwaggerModule.createDocument(app, config);
+    swagger_1.SwaggerModule.setup('api', app, document);
     await app.listen(8000);
 }
 bootstrap();

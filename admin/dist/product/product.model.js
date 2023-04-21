@@ -11,21 +11,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductSchema = exports.Product = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
+const swagger_1 = require("@nestjs/swagger");
 let Product = class Product {
 };
 __decorate([
+    (0, swagger_1.ApiProperty)({
+        type: String,
+        description: 'id of the product',
+    }),
     (0, mongoose_1.Prop)(),
     __metadata("design:type", Number)
 ], Product.prototype, "id", void 0);
 __decorate([
+    (0, swagger_1.ApiProperty)({
+        type: String,
+        description: 'title of the product',
+    }),
     (0, mongoose_1.Prop)(),
     __metadata("design:type", String)
 ], Product.prototype, "title", void 0);
 __decorate([
+    (0, swagger_1.ApiProperty)({
+        type: String,
+        description: 'image of the product',
+    }),
     (0, mongoose_1.Prop)(),
     __metadata("design:type", String)
 ], Product.prototype, "image", void 0);
 __decorate([
+    (0, swagger_1.ApiProperty)({
+        type: String,
+        description: 'likes of the product',
+    }),
     (0, mongoose_1.Prop)(),
     __metadata("design:type", String)
 ], Product.prototype, "likes", void 0);

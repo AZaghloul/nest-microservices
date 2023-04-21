@@ -7,10 +7,10 @@ import { MongooseModule } from '@nestjs/mongoose';
 @Module({
   imports: [
     MongooseModule.forRoot(
-      'mongodb+srv://ahmed:ahmed123@cluster0.k9i4qdf.mongodb.net',
+      'mongodb+srv://ahmed:ahmed123@cluster0.eaw1e7w.mongodb.net/?retryWrites=true&w=majority',
       {
         autoCreate: true,
-        dbName: 'nest_admin',
+        dbName: 'nest_admin2',
       },
     ),
     ProductModule,

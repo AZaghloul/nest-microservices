@@ -44,6 +44,17 @@ npm run listener
 
 ---
 
+# Swagger Documentation
+
+## How to Access the documentation of the application
+
+Both microservices are configured with Swagger as a API documentation, you can access it as follows:
+
+- for Admin Microservice Swagger `http://localhost:8000/api/`
+- for Main Microservice Swagger `http://localhost:8001/api/`
+
+---
+
 # Design Choices
 
 ## Technology used:

@@ -26,11 +26,13 @@
     "@nestjs/microservices": "^9.4.0",
     "@nestjs/mongoose": "^9.2.2",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/swagger": "^6.3.0",
     "amqp-connection-manager": "^4.1.12",
     "amqplib": "^0.10.3",
-    "mongoose": "^7.0.3",
+    "mongoose": "^6.2.2",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "swagger-ui-express": "^4.6.2"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",

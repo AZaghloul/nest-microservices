@@ -16,6 +16,8 @@ exports.ProductController = void 0;
 const common_1 = require("@nestjs/common");
 const microservices_1 = require("@nestjs/microservices");
 const product_service_1 = require("./product.service");
+const swagger_1 = require("@nestjs/swagger");
+const product_model_1 = require("./product.model");
 let ProductController = class ProductController {
     constructor(productService, client) {
         this.productService = productService;
@@ -34,12 +36,22 @@ let ProductController = class ProductController {
     }
 };
 __decorate([
+    (0, swagger_1.ApiResponse)({
+        status: 200,
+        description: 'List of products',
+        type: product_model_1.Product,
+    }),
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "all", null);
 __decorate([
+    (0, swagger_1.ApiResponse)({
+        status: 201,
+        description: 'Added product',
+        type: product_model_1.Product,
+    }),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)('title')),
     __param(1, (0, common_1.Body)('image')),
@@ -48,6 +60,11 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "create", null);
 __decorate([
+    (0, swagger_1.ApiResponse)({
+        status: 200,
+        description: 'Singel product',
+        type: product_model_1.Product,
+    }),
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
@@ -55,6 +72,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "get", null);
 ProductController = __decorate([
+    (0, swagger_1.ApiTags)('products'),
     (0, common_1.Controller)('products'),
     __param(1, (0, common_1.Inject)('PRODUCT_SERVICE')),
     __metadata("design:paramtypes", [product_service_1.ProductService,

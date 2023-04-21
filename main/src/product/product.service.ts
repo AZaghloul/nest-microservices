@@ -10,11 +10,11 @@ export class ProductService {
     private readonly productModel: Model<ProductDocument>,
   ) {}
 
-  async all() {
+  async all(): Promise<ProductDocument[]> {
     return this.productModel.find().exec();
   }
 
-  async create(createProductDto) {
+  async create(createProductDto): Promise<ProductDocument> {
     const createdCat = new this.productModel(createProductDto);
     return createdCat.save();
   }
